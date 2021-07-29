@@ -33,25 +33,6 @@ function App() {
        })
   }, [pageNumber])
 
-  const scroll = () => {
-    // let wrap = document.getElementById('body')
-    // let y = wrap.scrollTop 
-    // let contentHeight = wrap.offsetHeight
-    // let reach = contentHeight - y
-    // console.log(y, reach,contentHeight);
-    // document.getElementById('test').innerHTML =y + ' | ' + ' | ' +reach+ ' | '+ contentHeight
-    // if(y  >= reach){
-    //    axios.get(`https://api.thecatapi.com/v1/breeds?page=${pageNumber+1}&limit=10`)
-    //    .then(async(res)=>{
-    //        setData(prevCat =>{
-    //          return [...new Set([...data,...res.data])]})
-    //       //  setpages({page: pages.page + 1})
-    //    })
-    //    .catch((err)=>{
-    //        console.log(err.response);
-    //    })
-    // }
-  }
 
   const search =(e)=>{
     if(e.target.value.length > 0){
@@ -75,7 +56,7 @@ function App() {
 
 
   return (
-    <div className="App"  id='body'  style={{overflowY:'scroll', height:'100vh'}} onScroll={()=>scroll()} >
+    <div className="App"  id='body' >
       <Navbar />
       <Home data={data} btnRef={lastBookElementRef} onchange={(e)=>{search(e)}} />
       <div id="test">{test}</div>
